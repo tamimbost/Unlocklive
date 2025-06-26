@@ -1,0 +1,98 @@
+// Start Brand Logo
+.ulv__brand-logo{
+    padding-top: 70px;
+    @include md{
+        padding-top: 50px;
+    }
+    .ulv__brand-logo-shape1{
+        bottom: 14%;
+        left: 15%;
+        width: 50px;
+        @include hd{
+            left: 18%;
+        }
+        img{
+            @media (max-width:1800px){
+                height: 100px;
+            }
+        }
+        @include xxl{
+            left: 1%;
+        }
+        @include xl{
+            display: none;
+        }
+    }
+    .ulv__brand-logo-wrapper{
+        display: flex;
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        align-items: center;
+        height: 100px;
+        position: relative;
+        @include md{
+            display: block;
+            height: auto;
+            border: unset;
+        }
+        &::after{
+            @include ulv__after;
+            background-color:rgba(255, 255, 255, .1);
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 22%;
+            @include lg{
+                left: 24%;
+            }
+            @include md{
+                display: none;
+            }
+        }
+    }
+    .ulv__brand-text-content{
+        width: 28%;
+        @include md{
+            width: 100%;
+            text-align: center;
+        }
+        .ulv__brand-marketing-text{
+            font-size: 20px;
+            font-weight:var(--ulv__fw-bold);
+            color: var(--ulv__primary-color);
+            line-height: 24px;
+            font-family: var(--ulv__title-font);
+        }
+    }
+    .ulv__brand-logo-item{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include md{
+            width: 100%;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            justify-content: center;
+            column-gap: 40px;
+        }
+        .ulv__logo{
+            &:nth-child(1){
+                position: relative;
+                top: 6px;
+            }
+            a{
+                img{
+                    transition: 0.3s ease-in;
+                }
+                &:hover{
+                    img{
+                        filter:invert(73%) sepia(79%) saturate(300%) hue-rotate(2deg) brightness(311%) contrast(90%);
+                    }
+                }
+            }
+        }
+    }
+}
+// End Brand Logo

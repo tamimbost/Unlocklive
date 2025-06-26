@@ -1,0 +1,65 @@
+// Scroll To Top
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 55px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    z-index: 10000;
+    opacity: 1;
+    visibility: hidden;
+    transform: translateY(45px);
+    transition: all 300ms linear;
+
+    &:after {
+        content: "\f102";
+        font-family: var(--ulv__icon-font);
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        color: var(--ulv__theme-primary-color);
+        left: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+        border: 2px solid var(--ulv__theme-primary-color);
+        box-shadow: none;
+        border-radius: 50%;
+    }
+
+    svg {
+        color: var(--ulv__theme-primary-color);
+        border-radius: 50%;
+        background:var(--ulv__primary-color);
+
+        path {
+            fill: none;
+        }
+    }
+
+    .progress-circle path {
+        stroke: var(--ulv__theme-primary-color);
+        stroke-width: 20px;
+        box-sizing: border-box;
+        transition: all 400ms linear;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &.style2 {
+        svg {
+            background: var(--ulv__theme-black3);
+        }
+    }
+}

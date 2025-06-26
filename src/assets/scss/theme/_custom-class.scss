@@ -1,0 +1,56 @@
+// Start Custom Container
+.ulv__container {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.ulv__container2 {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.ulv__container3 {
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.ulv__container4 {
+    max-width: 1325px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.ulv__horaizental-container{
+    max-width: 1600px;
+    margin-left: auto;
+    padding-left: 15px;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+// End Custom Container
+
+// Start Custom Section Spacing
+.ulv__space-top{
+    padding-top: 110px;
+    @include md{
+        padding-top: 70px;
+    }
+}
+.ulv__space-bottom{
+    padding-bottom: 110px;
+    @include md{
+        padding-bottom: 70px;
+    }
+}
+.ulv__space{
+    padding: 110px 0;
+    @include md{
+        padding: 70px 0;
+    }
+}
+// End Custom Section Spacing
+.pin-spacer{
+    background-color: var(--ulv__theme-black3);
+}

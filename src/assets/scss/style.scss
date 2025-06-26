@@ -1,0 +1,48 @@
+/*
+Theme Name: 
+Author: Theme Holy
+Author URI: https://themeforest.net/user/themeholy/portfolio
+Tags: Online Learning, E-Learing, University 
+Version: 1.0.0
+*/
+
+/********* base file **********/
+@import "base/reset";
+@import "base/variables";
+@import "base/breakpoint";
+@import "base/typhograph";
+@import "base/mixin";
+@import "base/color-palet";
+
+
+/******** theme file **********/
+@import "theme/custom-class";
+@import "theme/custom-animation";
+@import "theme/scrollCue";
+
+/******** components file ********/
+@import "components/desktop-menu";
+@import "components/mobile-menu";
+@import "components/search";
+@import "components/button";
+@import "components/checklist";
+@import "components/title";
+@import "components/faq-card";
+@import "components/footer-insta";
+@import "components/social-icon";
+@import "components/cursor";
+@import "components/toptoscroll";
+@import "components/preloader";
+
+/******** layout file **********/
+@import "layout/header";
+@import "layout/hero";
+@import "layout/features";
+@import "layout/about";
+@import "layout/slider-text";
+@import "layout/trending";
+@import "layout/pricing";
+@import "layout/counter";
+@import "layout/brand-logo";
+@import "layout/faq";
+@import"layout/footer";

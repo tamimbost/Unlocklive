@@ -1,0 +1,57 @@
+// Start Slider Area
+.ulv__text-slider-area{
+    padding: 35px 0;
+    background-color: var(--ulv__theme-black3);
+    @include sm{
+        padding: 20px 0;
+    }
+    @include xs{
+        padding: 10px 0;
+    }
+    .swiper-slide {
+        width: auto; 
+        white-space: nowrap; 
+    }
+
+    .ulv__slide-transtion{
+        transition-timing-function: linear;
+    }
+    .ulv__text-slider-content{
+        a{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 75px;
+            line-height: 56px;
+            color: var(--ulv__primary-color);
+            font-family: var(--ulv__title-font);
+            font-weight: 700;
+            padding: 40px 0;
+            transition: linear 0.4s;
+            @include sm{
+                font-size: 56px;
+                line-height: 36px;
+            }
+            @include xs{
+                font-size: 35px;
+                line-height: 15px;
+            }
+            &:hover{
+                color: var(--ulv__theme-primary-color);
+                span{
+                    img{
+                        filter: invert(73%) sepia(79%) saturate(300%) hue-rotate(2deg) brightness(311%) contrast(90%);
+                    }
+                }
+            }
+            span{
+                img{
+                    position: relative;
+                    top: 10px;
+                    transition: linear 0.4s;
+                }
+            }
+        }
+    }
+}
+// End Slider Area

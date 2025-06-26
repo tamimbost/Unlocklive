@@ -1,0 +1,24 @@
+.custom-cursor {
+    width: 148px;
+    height: 148px;
+    background-color: rgba(14, 14, 14, 0.20);
+    border-radius: 50%;
+    backdrop-filter: blur(45px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0);
+    font-family: var(--ulv__title-font);
+}
+
+// End Custom Cursor For Hero Slider

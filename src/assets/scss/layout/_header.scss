@@ -1,0 +1,65 @@
+.ulv__header {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    &.sticky{
+            position: fixed !important;
+            top: 0;
+            animation: ulv__headerStickyAnimations 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            display: block;
+            width: 100%;
+            z-index: 999;
+            max-width: 100%;
+            box-shadow: 10px 10px 42px -1px rgb(65 63 63 / 15%);
+            background-color: var(--ulv__theme-rgba1);
+            backdrop-filter: blur(5px);
+            @include lg{
+                padding: 15px 0;
+            }
+    }
+    .ulv__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ulv__header-button {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        position: relative;
+        &::after{
+            @include ulv__after;
+            width: 6px;
+            height: 33px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--ulv__theme-primary-color);
+            left: 76px;
+            @include xs{
+                display: none;
+            }
+        }
+        &::before{
+            width: 14px;
+            height: 14px;
+            @include ulv__before;
+            border-radius: 50%;
+            background-color: var(--ulv__theme-primary-color);
+            top: 24%;
+            transform: translateY(50%);
+            left: 72px;
+            @include xs{
+                display: none;
+            }
+        }
+        .ulv__primary-btn{
+            @include sm{
+                display: none;
+            }
+        }
+        
+    }
+}

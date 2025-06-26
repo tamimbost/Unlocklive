@@ -1,0 +1,322 @@
+        .ulv__trending-area {
+            background-color: var(--ulv__theme-black6);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            .ulv__trending-title-wrap {
+                margin-top: -0.50em !important;
+            }
+
+            .music-player {
+                margin-top: -0.70em !important;
+            }
+
+            .ulv__trending-shape1 {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                animation: scalingAnimation 9s linear infinite;
+            }
+
+            .ulv__tranding-btn-wrap {
+                margin-top: 40px;
+                text-align: center;
+            }
+        }
+
+        .track {
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--ulv__theme-black3);
+            margin-bottom: 20px;
+            height: 228px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include sm {
+                display: block;
+                height: auto;
+            }
+        }
+
+        .track:last-child {
+            border-bottom: none;
+        }
+
+        .track-info {
+            flex: 1;
+            padding-left: 30px;
+            padding-right: 42px;
+
+            @include sm {
+                position: relative;
+                padding: 30px;
+            }
+
+            @include xs {
+                padding-bottom: 95px;
+            }
+        }
+
+        .track-title {
+            font-size: var(--ulv__fs-md);
+            font-weight: var(--ulv__fw-ebold);
+            line-height: var(--ulv__lh-md);
+            text-transform: uppercase;
+
+            @include xs {
+                font-size: var(--ulv__fs-xs);
+                line-height: var(--ulv__lh-xs);
+            }
+        }
+
+        .artist-name {
+            font-size: 14px;
+            font-weight: var(--ulv__fw-ebold);
+            font-family: var(--ulv__title-font);
+            margin-top: -3px;
+        }
+
+        .ulv__audio-thumb-desktop {
+            display: block;
+
+            @include sm {
+                display: none;
+            }
+        }
+
+        .ulv__audio-thumb-mobile {
+            display: none;
+
+            @include sm {
+                display: block;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                width: 100%;
+            }
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 58px;
+            position: relative;
+
+            &::before {
+                @include ulv__before;
+                width: 100%;
+                height: 6px;
+                background-color: var(--ulv__theme-black2);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                box-shadow: 0px 4px 4px 0px rgba(23, 23, 23, 0.25) inset;
+                top: 30px;
+                left: 0;
+            }
+
+            &::after {
+                @include ulv__after;
+                width: 100%;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                top: 30px;
+                left: 0;
+            }
+        }
+
+        .play-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            @include ulv__common-transition;
+            background-color: var(--ulv__theme-primary-color);
+
+            @include xs {
+                position: absolute;
+                bottom: -55px;
+                left: 45%;
+            }
+        }
+
+        .play-btn.playing {
+            background-color: var(--ulv__theme-primary-color);
+        }
+
+        .play-btn.paused {
+            background-color: var(--ulv__primary-color);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .time-display {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+
+            @include xs {
+                position: absolute;
+            }
+
+            &.time-end {
+                @include xs {
+                    right: 0;
+                }
+            }
+
+        }
+
+        .progress-container {
+            flex: 1;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.10);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--ulv__theme-primary-color);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .volume-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--ulv__theme-black2);
+            border: 2px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0px 4px 4px 0px #000 inset;
+            color: var(--ulv__theme-primary-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            @include xs {
+                position: relative;
+                bottom: -55px;
+            }
+        }
+
+
+
+        .volume-container {
+            width: 37px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.10);
+            cursor: pointer;
+            position: relative;
+
+            @include xs {
+                bottom: -35px;
+                position: absolute !important;
+                right: 0;
+            }
+        }
+
+        .volume-bar {
+            height: 100%;
+            background-color: var(--ulv__theme-primary-color);
+            width: 100%;
+        }
+
+        .buy-btn {
+            background-color: transparent;
+            border: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            top: 52px;
+            right: 35px;
+
+            @include vxs {
+                top: 85px;
+            }
+
+            span {
+                font-size: var(--ulv__fs-vxs);
+                line-height: var(--ulv__lh-vxs);
+                font-weight: var(--ulv__fw-ebold);
+                font-family: var(--ulv__title-font);
+                color: var(--ulv__theme-primary-color);
+                @include ulv__common-transition;
+
+                @include vxs {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+
+            img {
+                @include ulv__common-transition;
+
+                @include vxs {
+                    width: 16px;
+                    position: relative;
+                    top: -1px;
+                }
+            }
+
+            &:hover {
+                span {
+                    color: var(--ulv__primary-color);
+                }
+
+                img {
+                    filter: invert(136%) sepia(100%) saturate(0) hue-rotate(180deg) brightness(400%) contrast(101%);
+                }
+            }
+        }
+
+
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+
+        .progress-container,
+        .volume-container {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1);
+
+            &.progress-container {
+                @include xs {
+                    position: absolute !important;
+                    width: 55%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        .progress-bar,
+        .volume-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--ulv__theme-primary-color);
+            transition: width 0.1s ease;
+        }

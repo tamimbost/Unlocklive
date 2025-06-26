@@ -1,0 +1,85 @@
+// Start Faq Area
+.ulv__faq-area{
+    background-color: var(--ulv__theme-black2);
+    .ulv__faq-shape2{
+        top: 15%;
+        right: 15%;
+        @include hd{
+            right: 22%;
+        }
+        @include xxl{
+            right: 5%;
+        }
+        @include lg{
+            right: 0;
+        }
+        @include md{
+            display: none;
+        }
+    }
+    .ulv__faq-wrapper{
+        display: flex;
+        gap: 75px;
+        align-items: center;
+        justify-content: center;
+        margin-top: -0.50em;
+        @include xl{
+            gap: 25px;
+        }
+        @include md{
+            display: block;
+            margin-top: 10px;
+        }
+        .ulv__faq-shape1{
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9D9D9D;
+            font-family: var(--ulv__title-font);
+            rotate: 90deg;
+            left: -15%;
+            @include ml{
+                left: -14%;
+            }
+            @include xl{
+                left: -12%;
+                color: var(--ulv__theme-black2);
+            }
+            @include md{
+                top: 28%;
+            }
+            @include sm{
+                left: -22%;
+            }
+            @include xs{
+                display: none;
+            }
+        }
+    }
+    .ulv__faq-img{
+        width: 50%;
+        @include xl{
+            width: 65%;
+        }
+        @include lg{
+            width: 80%;
+        }
+        @include md{
+            width: 100%;
+            margin-bottom: 75px;
+        }
+        @include sm{
+            margin-bottom: 50px;
+        }
+    }
+    .ulv__faq-card-item{
+        margin-top: -0.90em;
+    }
+        .ulv__faq-title-wrap{
+            @include md{
+                text-align: center;
+            }
+        }
+}
+// End Faq Area

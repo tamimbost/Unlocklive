@@ -1,0 +1,103 @@
+// ===================== Start Full Template variables ================ //
+:root{
+
+    /**
+     @Start Defoult Template Color Palet
+   */
+    --ulv__primary-color:#fff;
+    --ulv__secondary-color:#000;
+    /**
+     @Start Defoult Template Color Palet
+   */
+
+    /**
+     @Start Template Color Palet
+   */
+   --ulv__theme-primary-color:#E2C55D;
+   --ulv__theme-secondary-color:#9D9D9D;
+   --ulv__theme-black1:#1D2021;
+   --ulv__theme-black2:#0E0E0E;
+   --ulv__theme-black3:#171A1B;
+   --ulv__theme-black4:#282D32;
+   --ulv__theme-black5:#0D0D0D;
+   --ulv__theme-black6:#1E1E1E;
+   --ulv__theme-rgba1:rgba(45, 43, 45, 0.8);
+   /**
+    @Start Template Color Palet
+  */
+
+
+    /** @Start Template Font Family */
+    --ulv__title-font:"Bricolage Grotesque", sans-serif;
+    --ulv__body-font:"Poppins", serif;
+    /** @End Template Font Family */
+
+   
+    /**
+     @Start Template Font Weight
+   */
+    --ulv__fw-normal: normal;
+    --ulv__fw-thin: 100;
+    --ulv__fw-elight: 200;
+    --ulv__fw-light: 300;
+    --ulv__fw-regular: 400;
+    --ulv__fw-medium: 500;
+    --ulv__fw-sbold: 600;
+    --ulv__fw-bold: 700;
+    --ulv__fw-ebold: 800;
+    --ulv__fw-black: 900;
+    /**
+     @EndTemplate Font Weight
+   */
+
+    /**
+     @Start Template Font Size
+   */
+    --ulv__fs-xxxl:90px;
+    --ulv__fs-xxl:74px;
+    --ulv__fs-xl:50px;
+    --ulv__fs-lg:36px;
+    --ulv__fs-md:30px;
+    --ulv__fs-sm:24px;
+    --ulv__fs-xs:18px;
+    --ulv__fs-vxs:16px;
+    --ulv__icon-font: "Font Awesome 6 Pro";
+    /**
+     @End Template Font Size
+   */
+
+       /**
+     @Start Template Line Height
+   */
+   --ulv__lh-xxxl:95px;
+   --ulv__lh-xxl:56px;
+   --ulv__lh-xl:60px;
+   --ulv__lh-lg:46px;
+   --ulv__lh-md:40px;
+   --ulv__lh-sm:34px;
+   --ulv__lh-xs:28px;
+   --ulv__lh-vxs:26px;
+   /**
+    @End Template Line Height
+  */
+
+
+
+      
+}
+
+
+// Device Variation
+$hd: 1921px; // Large Device Than 1920
+$xxl: 1500px; // Extra large Device
+$ml: 1399px; // Medium Large Device
+$xl: 1299px; // Medium Large Device
+$lg: 1199px; // Large Device (Laptop)
+$md: 991px; // Medium Device (Tablet)
+$sm: 767px; // Small Device
+$xs: 575px; // Extra Small Device
+$vxs: 375px; // Extra Small Device
+
+
+
+// ===================== End Full Template variables ================ //

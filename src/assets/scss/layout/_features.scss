@@ -1,0 +1,179 @@
+// Start Features Area
+.ulv__features-area {
+    background-color: var(--ulv__theme-black2);
+    .ulv__feature-area-shep {
+        top: 0;
+        left: 0;
+    }
+
+    .ulv__features-wrapper {
+        display: flex;
+        align-items: center;
+        @include xl{
+            justify-content: center;
+        }
+        @include sm{
+            flex-direction: column;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        .ulv__features-item {
+            text-align: center;
+            padding: 60px 45px;
+            @include ml{
+                padding: 60px 30px;
+            }
+            @include xl{
+                padding: 60px 45px;
+            }
+            @include md{
+                padding: 60px 30px;
+            }
+            @include sm{
+                padding: 30px;
+            }
+            .icon {
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--ulv__theme-black3);
+                border: 1px dashed var(--ulv__theme-primary-color);
+                transition: 0.4s;
+                transform: rotateY(0);
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 18px;
+            }
+
+            &:hover {
+                .icon {
+                    transform: rotateY(360deg);
+                }
+            }
+
+            .ulv__features-title {
+                font-weight: var(--ulv__fw-bold);
+                margin-bottom: 9px;
+            }
+
+            .ulv__features-content {
+                max-width: 235px;
+            }
+
+            &:nth-child(2) {
+                border-left: 1px solid #9d9d9d3d;
+                border-right: 1px solid #9d9d9d3d;
+                background-color: #111212;
+                @include sm{
+                    background: transparent;
+                    border-left: 0;
+                    border-right: 0;
+                }
+            }
+        }
+    }
+
+    .ulv__features-video {
+        position: absolute;
+        right: 0;
+        width: 37%;
+        top: 0;
+        transform: translateY(-50%);
+        background: var(--ulv__theme-primary-color);
+        padding-left: 40px;
+        display: flex;
+        align-items: start;
+        gap: 26px;
+        padding-top: 92px;
+        padding-bottom: 115px;
+        z-index: 1;
+        @include hd{
+            width: 40%;
+        }
+        @include xxl{
+            width: 30%;
+        }
+        @include xl{
+            position: unset;
+            transform: unset;
+            width: 100%;
+            justify-content: center;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        @include xs{
+            flex-direction: column;
+            margin: auto;
+            padding-left: 0;
+        }
+        .ulv__feature-video-shep {
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .ulv__video-button {
+            @include xs{
+                order: 2;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .video-play-icon {
+                width: 96px;
+                height: 96px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--ulv__secondary-color);
+                border-radius: 50%;
+                border: 2px dashed var(--ulv__theme-primary-color);
+
+                i {
+                    color: var(--ulv__primary-color);
+                    font-size: 22px;
+                }
+            }
+        }
+        .ulv__video-content{
+            @include xs{
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+        }
+        .ulv__video-sub-title {
+            color: var(--ulv__theme-black2);
+            font-weight: var(--ulv__fw-bold);
+            font-size: var(--ulv__fs-xs);
+            font-family: var(--ulv__title-font);
+            max-width: max-content;
+            @include xs{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &::after {
+                @include ulv__after;
+                width: 42px;
+                height: 3.004px;
+                border-radius: 5px;
+                background: var(--ulv__theme-black2);
+                top: 49.5%;
+                transform: translateY(-50%);
+                border-radius: 5px;
+                right: -56px;
+            }
+        }
+
+        .ulv__video-title {
+            max-width: 285px;
+            font-weight: var(--ulv__fw-ebold);
+            color: var(--ulv__theme-black2);
+        }
+    }
+}
+
+// End Features Area

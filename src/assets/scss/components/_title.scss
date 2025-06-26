@@ -1,0 +1,60 @@
+// Start Title Style 
+.ulv__title-wrap{
+    margin-bottom: 55px;
+    .ulv__sub-title-wrap{
+        .ulv__sub-title{
+            color: var(--ulv__theme-primary-color);
+            font-weight: var(--ulv__fw-bold);
+            font-size: var(--ulv__fs-xs);
+            font-family: var(--ulv__title-font);
+            line-height: var(--ulv__lh-xs);
+        }
+    }
+    .ulv__main-title-wrap{
+        .ulv__title{
+            color: var(--ulv__primary-color);
+            font-weight: var(--ulv__fw-bold);
+            span{
+                color: var(--ulv__primary-color);
+                font-weight: var(--ulv__fw-bold);
+                font-family: var(--ulv__title-font);
+                color: var(--ulv__theme-primary-color);
+                @include sm{
+                font-size: var(--ulv__fs-md);
+                line-height: var(--ulv__lh-md);
+                }
+            }
+            @include sm{
+                font-size: var(--ulv__fs-md);
+                line-height: var(--ulv__lh-md);
+            }
+        }
+    }
+}
+// End Title Style
+
+// Start Footer Title
+.ulv__footer-titel-wrap{
+    margin-bottom: 28px;
+    .ulv__footer-title{
+        font-weight: var(--ulv__fw-bold);
+        text-transform: capitalize;
+        position: relative;
+        padding-bottom: 12px;
+        &::after,
+        &::before{
+            @include ulv__after;
+            width: 243px;
+            height: 2.5px;
+            left: 0;
+            bottom: 0;
+            background-color: #444546;
+        }
+        &::before{
+            width: 80px;
+            background-color: var(--ulv__theme-primary-color);
+            z-index: 1;
+        }
+    }
+}
+// End Footer Title

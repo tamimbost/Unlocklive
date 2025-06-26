@@ -1,0 +1,41 @@
+/********* Start Title Font  ***************/
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+/********* End Title Font ***************/
+
+/********* Start Body Font  ***************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/********* End Body Font ***************/
+
+
+/********* Start Heading Font Size  ***************/
+h1 {
+    font-size: var(--ulv__fs-xxxl);
+    line-height: var(--ulv__lh-xxxl);
+}
+
+h2 {
+    font-size: var(--ulv__fs-xxl);
+    line-height: var(--ulv__lh-xxl);
+}
+
+h3 {
+    font-size: var(--ulv__fs-xl);
+    line-height: var(--ulv__lh-xl);
+}
+
+h4 {
+    font-size: var(--ulv__fs-lg);
+    line-height: var(--ulv__lh-lg);
+}
+
+h5 {
+    font-size: var(--ulv__fs-md);
+    line-height: var(--ulv__lh-md);
+}
+
+h6 {
+    font-size: var(--ulv__fs-sm);
+    line-height: var(--ulv__lh-sm);
+}
+
+/********* End Heading Font Size  ***************/

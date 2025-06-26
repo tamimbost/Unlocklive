@@ -1,0 +1,21 @@
+/********* Start Common Trastion  ***************/
+@mixin ulv__common-transition{
+    transition: 0.4s ease;
+}
+/********* End Common Trastion  ***************/
+
+/********* Start After  ***************/
+@mixin ulv__after{
+    content: '';
+    position: absolute;
+}
+/********* End After  ***************/
+
+/********* Start Before  ***************/
+@mixin ulv__before{
+    content: '';
+    position: absolute;
+}
+/********* End Before  ***************/
+
+

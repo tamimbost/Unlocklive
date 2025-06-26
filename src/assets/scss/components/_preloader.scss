@@ -1,0 +1,49 @@
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--ulv__theme-black3);
+      z-index: 9999;
+    }
+
+    .preloader-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    h1 {
+      position: relative;
+      display: inline-block;
+      color: hsla(0, 0%, 100%, 0.3);
+      font: 900 80px var(--ulv__title-font);
+      letter-spacing: 2px;
+      @include xs{
+        font: 900 55px var(--ulv__title-font);
+      }
+    }
+
+    h1::before {
+      content: attr(data-content);
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      max-width: 0;
+      color: var(--ulv__theme-primary-color);
+      white-space: nowrap;
+      animation: loading 3s linear infinite;
+    }
+
+    @keyframes loading {
+      from {
+        max-width: 0;
+      }
+      to {
+        max-width: 100%;
+      }
+    }

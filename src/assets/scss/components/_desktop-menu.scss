@@ -1,0 +1,117 @@
+.ulv__menu-area {
+    position: relative;
+    left: -45px;
+    @include ml{
+        left: 0;
+    }
+    @include lg{
+        display: none;
+    }
+    ul {
+        li {
+            list-style-type: none;
+            display: inline-block;
+            position: relative;
+            margin-right: 55px;
+            @include xl{
+                margin-right: 30px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.ulv__dropdown {
+                &:hover{
+                    .ulv__submenu-desktop{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scaleY(1);
+                    }
+                }
+                .ulv__submenu-desktop {
+                    position: absolute;
+                    width: 190px;
+                    background-color: var(--ulv__theme-black4);
+                    top: 100%;
+                    padding: 16px;
+                    border-radius: 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: scaleY(0);
+                    transform-origin: top center;
+                    transition: all 0.4s ease 0s;
+                    z-index: 10;
+                    li {
+                        display: block;
+                        margin-bottom: 10px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        a {
+                            padding: 0;
+                            margin-left: 0;
+                            transition: 0.3s ease-in;
+                            &:hover{
+                                margin-left: 14px;
+                                &::after{
+                                    left: 0;
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                            &::after{
+                                @include ulv__after;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background: var(--ulv__theme-primary-color);
+                                top: 50%;
+                                transform: translateY(-50%);
+                                transition: 0.3s ease-in;
+                                left: -10px;
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+
+            a {
+                color: var(--ulv__primary-color);
+                font-size: var(--ulv__fs-vxs);
+                line-height: var(--ulv__lh-vxs);
+                font-weight: var(--ulv__fw-ebold);
+                letter-spacing: 0.48px;
+                font-family: var(--ulv__title-font);
+                @include ulv__common-transition;
+                padding: 35px 0;
+                transition: linear 0.3s;
+                display: block;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 10px;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='43' height='10' viewBox='0 0 43 10' fill='none'%3E%3Cpath d='M2 7.99988C8.08696 3.99988 24.6087 -1.60013 42 7.99988' stroke='%23E2C55D' stroke-width='4'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position: absolute;
+                    bottom: 18px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: 0.3s ease-in;
+                    width: 0;
+                }
+
+                &:hover {
+                    color: var(--ulv__theme-primary-color);
+
+                    &::after {
+                        width: 43px;
+                    }
+                }
+            }
+        }
+    }
+}

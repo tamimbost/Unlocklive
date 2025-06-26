@@ -1,0 +1,65 @@
+// Start Counter Area
+.ulv__counter-area{
+    margin-top: 180px;
+    margin-left: 130px;
+    @include xl{
+        margin-top: 145px;
+    }
+    @include lg{
+        margin-top: 85px;
+    }
+    @include md{
+        margin-left: 0;
+    }
+    .ulv__counter-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 145px;
+        @include xl{
+            gap: 100px;
+        }
+        @include lg{
+            gap: 60px;
+        }
+        @include md{
+            gap: 30px;
+            justify-content: center;
+        }
+        @include sm{
+            flex-wrap: wrap;
+            gap: 45px;
+        }
+    }
+    .ulv__counter-item{
+        &:nth-child(2){
+            position: relative;
+            .ulv__counter-shape-1{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: var(--ulv__theme-primary-color);
+                border-radius: 50%;
+                top: -15px;
+                right: 5px;
+            }
+            .ulv__counter-number{
+                color: var(--ulv__theme-primary-color);
+            }
+        }
+        .ulv__counter-number{
+            font-weight: var(--ulv__fw-medium);
+            @include md{
+                text-align: center;
+            }
+        }
+        .ulv__counter-content{
+            font-size: var(--ulv__fs-xs);
+            line-height: var(--ulv__lh-xs);
+            font-weight: var(--ulv__fw-sbold);
+            @include md{
+                text-align: center;
+            }
+        }
+    }
+}
+// End Counter Area

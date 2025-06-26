@@ -1,0 +1,123 @@
+// Start About Area
+.ulv__about-area {
+    background-color: var(--ulv__theme-black5);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 110px;
+    .ulv__about-shape{
+        right: 135px;
+        top: 73%;
+        animation: ulv__bounceY 5s linear infinite;
+        @include xl{
+            right: 60px;
+            top: 62%;
+        }
+        @include lg{
+            right: 20px;
+            top: 60%;
+        }
+        @include md{
+            right: 40px;
+            top: 80%
+        }
+        @include sm{
+            top: 70%;
+        }
+        @include xs{
+            display: none;
+        }
+    }
+    .ulv__about-wrapper {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 170px;
+        @include md{
+            display: block;
+        }
+        .ulv__img-content {
+            position: relative;
+
+            .ulv__img2 {
+                position: absolute;
+                top: 50%;
+                right: -35%;
+                @include md{
+                    display: none;
+                }
+                &::after{
+                    @include ulv__after;
+                    width: 10px;
+                    background-color: var(--ulv__theme-primary-color);
+                    height: 100%;
+                    top: 0;
+                    right: -10px;
+                }
+            }
+
+            .ulv__img1 {
+                position: relative;
+                img{
+                    @include md{
+                        width: 100%;
+                    }
+                }
+                &::after,
+                &::before {
+                    @include ulv__after;
+                    width: 10px;
+                    height: 152px;
+                    background-color: var(--ulv__theme-primary-color);
+                    left: -10px;
+                    top: 0;
+                }
+
+                &::after {
+                    width: 152px;
+                    height: 10px;
+                    top: -10px;
+                }
+            }
+        }
+
+        .ulv__text-content {
+            @include md{
+                margin-top: 45px;
+            }
+            .ulv__about-bottom-content {
+                margin-left: 70px;
+                margin-top: -0.90em;
+                @include lg{
+                    margin-left: 25px;
+                }
+                @include md{
+                    margin-left: 0;
+                }
+                .ulv__checklist-style1 {
+                    margin-bottom: 38px;
+                }
+            }
+        }
+    }
+
+    .ulv__title-width {
+        max-width: 495px;
+        @include lg{
+            max-width: 500px;
+        }
+    }
+
+    .ulv__pera-content {
+        max-width: 530px;
+    }
+
+    .ulv__checklist-title {
+        font-weight: var(--ulv__fw-ebold);
+        font-size: 20px;
+        margin-top: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+// End About Area

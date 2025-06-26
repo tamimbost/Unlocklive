@@ -1,0 +1,234 @@
+// Start Hero Area
+.ulv__hero-area {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 190px;
+    padding-bottom: 10px;
+    @include lg{
+        padding-top: 150px;
+    }
+    .ulv__hero-shape1 {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38%;
+    top: 29%;
+    @include xl{
+        width: 60%;
+        top: 32%;
+    }
+    @include sm{
+        top: 35%;
+    }
+    @include xs{
+        width: 80%;
+        top: 38%;
+    }
+    @include vxs{
+        top: 39%;
+    }
+    }
+    .ulv__hero-shape2{
+        letter-spacing: 6.4px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 800;
+        color: var(ulv__primary-color);
+        opacity: 0.4;
+        text-transform: uppercase;
+        rotate: 90deg;
+        font-family: var(--ulv__title-font);
+        bottom: 30%;
+        right: -4%;
+        @include hd{
+            right: -3%;
+        }
+        @media(max-width:1700px){
+            right: -8%;
+        }
+        @include lg{
+            display: none;
+        }
+    }
+    .ulv__hero-shape3{
+        bottom: 88px;
+        right: 57px;
+        animation: ulv__bounceY 5s linear infinite;
+        @media (max-width:1700px){
+            right: 20px;
+        }
+        @include lg{
+            bottom: 32px;
+        }
+        @include sm{
+            display: none;
+        }
+    }
+    .ulv__hero-shape4{
+        right: 15%;
+        animation: ulv__bounceY 4s linear infinite;
+        @include hd{
+            right: 23%;
+        }
+        @include xxl{
+            right: 4%;
+        }
+        @include sm{
+            display: none;
+        }
+    }
+    .ulv__hero-shape5{
+        right: 20%;
+        top: 27%;
+        animation: ulv__bounceX 5s linear infinite;
+        @include hd{
+            right: 26%;
+        }
+        @include xxl{
+            right: 10%;
+        }
+        @include lg{
+            top: 30%;
+        }
+        @include md{
+            right: 6%;
+            top: 33%;
+        }
+        @include sm{
+            display: none;
+        }
+    }
+    .ulv__hero-shape6{
+        left: 12%;
+        top: 27%;
+        animation: scalingAnimation 8s linear infinite;
+        @include hd{
+            left: 21%;
+        }
+        @include xxl{
+            left: 2%;
+        }
+        @include sm{
+            display: none;
+        }
+    }
+}
+
+.hero-sub-title {
+    background-color: var(--ulv__theme-rgba1);
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 6px 35px;
+    border-radius: 50px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(45px);
+
+    &::after,
+    &::before {
+        @include ulv__after;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--ulv__theme-black3);
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        left: calc(100% - 24px);
+    }
+
+    span {
+        font-size: var(--ulv__fs-xs);
+        line-height: var(--ulv__lh-xs);
+        font-weight: var(--ulv__fw-ebold);
+        color: var(--ulv__theme-primary-color);
+    }
+}
+
+.hero-title {
+    max-width: 840px;
+    margin: 8px auto 0 auto;
+    font-weight: var( --ulv__fw-bold);
+    text-align: center;
+    @include lg{
+        font-size: 55px;
+        line-height: 66px;
+        max-width: 800px;
+    }
+    @include xs{
+        font-size: 45px;
+        line-height: 58px;
+        max-width: 100%;
+        text-align: center;
+    }
+    @include vxs{
+        font-size: 30px;
+        line-height: 42px;
+    }
+    span {
+        font-family: var(--ulv__title-font);
+        color: var(--ulv__theme-primary-color);
+        font-weight: var( --ulv__fw-bold);
+    }
+}
+
+.ulv__hero-slide-inner {
+    width: calc(100% + 1520px);
+    margin-left: -760px;
+    @include xl{
+        width: calc(100% + 1220px);
+        margin-left: -610px;
+    }
+    @include md{
+        width: calc(100% + 1030px);
+        margin-left: -515px; 
+    }
+    .ulv__hero-img {
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
+.ulv__hero-slide-wrapper {
+    border-radius: 10px;
+    position: relative;
+    cursor: none;
+    overflow-x: hidden;
+    margin-top: 35px;
+}
+
+.ulv__hero-bottom-text {
+    position: relative;
+    top: -50px;
+    @include lg{
+        top: -20px;
+    }
+    h1 {
+        font-size: 170px;
+        font-weight: 700;
+        line-height: 95px;
+        background: linear-gradient(184deg, rgba(34, 34, 37, .18) 6.41%, rgba(136, 136, 136, .2) 207.83%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 20px 0;
+        text-align: center;
+        @include lg{
+            font-size: 85px;
+            line-height: 55px;
+        }
+        @include sm{
+            font-size: 50px;
+            line-height: 30px;
+        }
+        @include vxs{
+                    font-size: 35px;
+        line-height: 25px;
+        }
+    }
+}
+
+// End Hero Area

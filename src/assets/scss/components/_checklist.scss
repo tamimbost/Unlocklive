@@ -1,0 +1,15 @@
+// Start Check List Style 1
+.ulv__checklist-style1{
+    ul{
+        li{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+// End Check List Style 1

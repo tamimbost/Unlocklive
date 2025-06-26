@@ -1,0 +1,21 @@
+// Start Social Icon 
+.ulv__social-media-wrap{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    a{
+        width: 45px;
+        height: 45px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 50%;
+        color: var(--ulv__primary-color);
+        transition: linear 0.4s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+            color: var(--ulv__theme-primary-color);
+        }
+    }
+}
+// End Social Icon
