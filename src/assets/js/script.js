@@ -315,12 +315,116 @@
      * Play/Pause, Time update, Progress bar, Volume bar, Mute toggle, etc.
      */
     trendingAlbumActivation: function () {
-      $(document).ready(function () {
-        let currentAudio = null;
+$(document).ready(function () {
+    let currentAudio = null;
 
-        // All play button actions and supporting logic handled here
-        // ... (already self-explanatory with readable naming)
-      });
+    $(".play-btn").click(function () {
+      const button = $(this);
+      const track = button.closest(".track");
+      const audio = track.find(".audio")[0];
+      const img = button.find("img");
+
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        const previousTrack = $(currentAudio).closest(".track");
+        previousTrack.removeClass("playing");
+        previousTrack.find(".play-btn").addClass("paused").find("img").attr("src", "assets/images/icons/video-off.svg");
+      }
+
+      if (audio.paused) {
+        audio.play();
+        button.removeClass("paused");
+        track.addClass("playing");
+        img.attr("src", "assets/images/icons/video-on.svg");
+        currentAudio = audio;
+      } else {
+        audio.pause();
+        button.addClass("paused");
+        track.removeClass("playing");
+        img.attr("src", "assets/images/icons/video-off.svg");
+      }
+    });
+
+    $("audio").on("timeupdate", function () {
+      const audio = this;
+      const track = $(audio).closest(".track");
+      const progress = (audio.currentTime / audio.duration) * 100;
+      track.find(".progress-bar").css("width", progress + "%");
+      const currentTime = new Date(audio.currentTime * 1000).toISOString().substr(14, 5);
+      track.find(".time-display").eq(0).text(currentTime);
+    });
+
+    $("audio").on("loadedmetadata", function () {
+      const track = $(this).closest(".track");
+      const totalTime = new Date(this.duration * 1000).toISOString().substr(14, 5);
+      track.find(".time-display").eq(1).text(totalTime);
+    });
+
+    $(".progress-container").click(function (e) {
+      const container = $(this);
+      const audio = container.closest(".track").find(".audio")[0];
+      const progress = e.offsetX / container.width();
+      audio.currentTime = progress * audio.duration;
+    });
+
+    $(".volume-container").click(function (e) {
+      const container = $(this);
+      const track = container.closest(".track");
+      const audio = track.find(".audio")[0];
+      const volume = e.offsetX / container.width();
+      audio.volume = volume;
+      audio.muted = false;
+      container.find(".volume-bar").css("width", volume * 100 + "%");
+      track.find(".volume-icon-wrap i").removeClass("fa-volume-slash").addClass("fa-volume");
+    });
+
+    $(".volume-icon-wrap").click(function () {
+      const iconWrap = $(this);
+      const track = iconWrap.closest(".track");
+      const audio = track.find(".audio")[0];
+      const icon = iconWrap.find("i");
+
+      audio.muted = !audio.muted;
+      if (audio.muted) {
+        icon.removeClass("fa-volume").addClass("fa-volume-slash");
+        track.find(".volume-bar").css("width", "0%");
+      } else {
+        icon.removeClass("fa-volume-slash").addClass("fa-volume");
+        track.find(".volume-bar").css("width", audio.volume * 100 + "%");
+      }
+    });
+
+    $(".audio").each(function () {
+      const audio = this;
+      const track = $(audio).closest(".track");
+
+      audio.volume = 1;
+      track.find(".volume-bar").css("width", "100%");
+
+      if (audio.readyState > 0) {
+        const duration = new Date(audio.duration * 1000).toISOString().substr(14, 5);
+        track.find(".time-display").eq(1).text(duration);
+      } else {
+        audio.addEventListener("loadedmetadata", function () {
+          const duration = new Date(audio.duration * 1000).toISOString().substr(14, 5);
+          track.find(".time-display").eq(1).text(duration);
+        });
+      }
+    });
+
+    $("audio").on("ended", function () {
+      const track = $(this).closest(".track");
+      const playBtn = track.find(".play-btn");
+      const img = playBtn.find("img");
+
+      track.removeClass("playing");
+      playBtn.addClass("paused");
+      img.attr("src", "assets/images/icons/video-off.svg");
+      track.find(".progress-bar").css("width", "0%");
+      track.find(".time-display").eq(0).text("00:00");
+      currentAudio = null;
+    });
+  });
     },
 
     /**
@@ -396,15 +500,95 @@
      */
     swiperActivation: function () {
       // Hero slider
-      // Text slider
+  if ($(".ulv__hero").length > 0) {
+    new Swiper(".ulv__hero", {
+      slidesPerView: 3,
+      spaceBetween: 53,
+      centeredSlides: true,
+      loop: true,
+      breakpoints: {
+        992: { spaceBetween: 53 },
+        991: { spaceBetween: 20 },
+        768: { slidesPerView: 3 },
+        767: { slidesPerView: 1 },
+        575: { spaceBetween: 15 },
+      },
+    });
+  }
+// Text slider
+  if ($(".ulv__text-sliding").length > 0) {
+    new Swiper(".ulv__text-sliding", {
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      freeMode: true,
+      centeredSlides: true,
+      loop: true,
+      speed: 9000,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: true,
+      },
+    });
+  }
     },
 
     /**
      * Full screen mobile menu animation with submenu
      */
     mobileMenuActivation: function () {
-      // Menu icon animation
-      // Submenu toggle
+$(document).ready(function () {
+    $(".menu-icon").click(function (e) {
+      var offset = e.target.getBoundingClientRect();
+      var x = e.clientX - offset.left;
+      var y = e.clientY - offset.top;
+
+      $(".ulv__overlay").css({ "--x": x + "px", "--y": y + "px" }).addClass("ulv__animating");
+
+      setTimeout(function () {
+        $(".ulv__mobile-menu, .ulv__overlay").addClass("ulv__active");
+        $(".ulv__nav-item").each(function (index) {
+          $(this).css({
+            animation: `fadeInRight 0.3s ease forwards ${0.1 * index}s`,
+            opacity: "0",
+          });
+        });
+      }, 50);
+
+      setTimeout(function () {
+        $(".ulv__overlay").removeClass("ulv__animating");
+      }, 500);
+    });
+
+    $(".ulv__close-btn, .ulv__overlay").click(function () {
+      $(".ulv__mobile-menu, .ulv__overlay").removeClass("ulv__active");
+    });
+
+    $(".ulv__nav-link").click(function (e) {
+      e.preventDefault();
+      var submenu = $(this).next(".ulv__submenu");
+      var toggleBtn = $(this).find(".ulv__toggle-btn");
+
+      $(".ulv__submenu").not(submenu).slideUp().removeClass("ulv__active");
+      $(".ulv__toggle-btn").not(toggleBtn).removeClass("ulv__active");
+
+      submenu.slideToggle(function () {
+        if (submenu.is(":visible")) {
+          submenu.addClass("ulv__active");
+          toggleBtn.addClass("ulv__active");
+          submenu.find(".ulv__submenu-item").each(function (index) {
+            $(this).css({
+              animation: `fadeInDown 0.3s ease forwards ${0.1 * index}s`,
+              opacity: "0",
+            });
+          });
+        } else {
+          submenu.removeClass("ulv__active");
+          toggleBtn.removeClass("ulv__active");
+        }
+      });
+    });
+  });
     },
 
     /**
@@ -432,3 +616,7 @@
   // Bootstrap/init call
   ulvJs.m();
 })(jQuery, window);
+
+
+
+

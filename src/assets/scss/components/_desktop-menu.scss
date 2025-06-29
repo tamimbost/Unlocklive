@@ -1,33 +1,49 @@
 .ulv__menu-area {
     position: relative;
     left: -45px;
-    @include ml{
+
+    @include ml {
         left: 0;
     }
-    @include lg{
+
+    @include lg {
         display: none;
     }
+
     ul {
         li {
             list-style-type: none;
             display: inline-block;
             position: relative;
             margin-right: 55px;
-            @include xl{
+
+            @include xl {
                 margin-right: 30px;
             }
+
             &:last-child {
                 margin-right: 0;
             }
 
-            &.ulv__dropdown {
-                &:hover{
-                    .ulv__submenu-desktop{
-                    visibility: visible;
-                    opacity: 1;
-                    transform: scaleY(1);
+            &:hover {
+                a {
+                    color: var(--ulv__theme-primary-color);
+
+                    &::after {
+                        width: 43px;
                     }
                 }
+            }
+
+            &.ulv__dropdown {
+                &:hover {
+                    .ulv__submenu-desktop {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: scaleY(1);
+                    }
+                }
+
                 .ulv__submenu-desktop {
                     position: absolute;
                     width: 190px;
@@ -41,25 +57,31 @@
                     transform-origin: top center;
                     transition: all 0.4s ease 0s;
                     z-index: 10;
+
                     li {
                         display: block;
                         margin-bottom: 10px;
-                        &:last-child{
+
+                        &:last-child {
                             margin-bottom: 0;
                         }
+
                         a {
                             padding: 0;
                             margin-left: 0;
                             transition: 0.3s ease-in;
-                            &:hover{
+
+                            &:hover {
                                 margin-left: 14px;
-                                &::after{
+
+                                &::after {
                                     left: 0;
                                     opacity: 1;
                                     visibility: visible;
                                 }
                             }
-                            &::after{
+
+                            &::after {
                                 @include ulv__after;
                                 width: 8px;
                                 height: 8px;
@@ -104,13 +126,13 @@
                     width: 0;
                 }
 
-                &:hover {
-                    color: var(--ulv__theme-primary-color);
+                // &:hover {
+                //     color: var(--ulv__theme-primary-color);
 
-                    &::after {
-                        width: 43px;
-                    }
-                }
+                //     &::after {
+                //         width: 43px;
+                //     }
+                // }
             }
         }
     }
